@@ -1,6 +1,6 @@
 {
   "name": "@astro-my/swagger-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Astro API documentation tool using joi schema",
   "main": "src/index.js",
   "author": "Rahul Khanna (khanna.mailme@gmail.com)",
