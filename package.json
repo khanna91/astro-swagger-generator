@@ -1,10 +1,15 @@
 {
-  "name": "astro-api-doc",
+  "name": "@astro-my/swagger-generator",
   "version": "0.0.0",
   "description": "Astro API documentation tool using joi schema",
   "main": "src/index.js",
   "author": "Rahul Khanna",
   "license": "MIT",
+  "keywords": [
+    "swagger",
+    "joi",
+    "converter"
+  ],
   "dependencies": {
     "@hapi/joi": "^16.1.8",
     "fs-extra": "^8.1.0",
@@ -12,6 +17,19 @@
     "hapi-joi-to-swagger": "^3.2.0",
     "joi": "^14.3.1",
     "joi-to-swagger": "^3.3.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "yargs": "^15.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-astro": "^1.0.8",
+    "eslint-plugin-import": "^2.19.1"
+  },
+  "scripts": {
+    "lint": "eslint ./src",
+    "test": "astro-swagger-generator -v ./testdata/*.validator.js -h ./swagger/header.json -o ./swagger/swagger.json"
+  },
+  "bin": {
+    "swagger-generator": "./src/index.js"
   }
 }

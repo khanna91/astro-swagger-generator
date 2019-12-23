@@ -8,6 +8,7 @@
             "email": "rahul_khanna@astro.com.my"
         }
     },
+    "basePath": "/",
     "schemes": [
         "http",
         "https"

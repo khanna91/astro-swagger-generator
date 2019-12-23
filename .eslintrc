@@ -1,0 +1,16 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "extends": [
+    "astro"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": "off"
+  }
+}
