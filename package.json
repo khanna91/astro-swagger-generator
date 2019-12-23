@@ -1,0 +1,17 @@
+{
+  "name": "astro-api-doc",
+  "version": "0.0.0",
+  "description": "Astro API documentation tool using joi schema",
+  "main": "src/index.js",
+  "author": "Rahul Khanna",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^16.1.8",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "hapi-joi-to-swagger": "^3.2.0",
+    "joi": "^14.3.1",
+    "joi-to-swagger": "^3.3.0",
+    "lodash": "^4.17.15"
+  }
+}

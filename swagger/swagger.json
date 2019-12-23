@@ -1,0 +1,494 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "test-service for undefined environment",
+        "version": "1.0.0",
+        "title": "test-service undefined",
+        "contact": {
+            "email": "rahul_khanna@astro.com.my"
+        }
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/v1/detail/{detailId}": {
+            "post": {
+                "summary": "detail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "auth",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "detailId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "packageAsset",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fname",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/detailPostBody"
+                        }
+                    }
+                ],
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/detailPost200Response"
+                        },
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error Response",
+                        "schema": {
+                            "$ref": "#/definitions/detailPost400Response"
+                        }
+                    }
+                },
+                "x-amazon-apigateway-integration": {
+                    "passthroughBehavior": "when_no_match",
+                    "httpMethod": "post",
+                    "type": "http_proxy",
+                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/detail/{detailId}",
+                    "timeoutInMillis": 29000,
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    },
+                    "requestParameters": {
+                        "integration.request.querystring.id": "method.request.querystring.id",
+                        "integration.request.querystring.packageAsset": "method.request.querystring.packageAsset"
+                    },
+                    "cacheKeyParameters": [
+                        "method.request.querystring.id",
+                        "method.request.querystring.packageAsset",
+                        "method.request.path.detailId",
+                        "method.request.header.auth"
+                    ]
+                }
+            },
+            "options": {
+                "summary": "detail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "auth",
+                        "in": "header",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "detailId",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "packageAsset",
+                        "in": "query",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fname",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/detailPostBody"
+                        }
+                    }
+                ],
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "Default response for CORS method",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-integration": {
+                    "passthroughBehavior": "when_no_match",
+                    "httpMethod": "post",
+                    "type": "http_proxy",
+                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/detail/{detailId}",
+                    "timeoutInMillis": 29000,
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    },
+                    "requestParameters": {
+                        "integration.request.querystring.id": "method.request.querystring.id",
+                        "integration.request.querystring.packageAsset": "method.request.querystring.packageAsset"
+                    },
+                    "cacheKeyParameters": [
+                        "method.request.querystring.id",
+                        "method.request.querystring.packageAsset",
+                        "method.request.path.detailId",
+                        "method.request.header.auth"
+                    ]
+                }
+            }
+        },
+        "/v1/linearDetail": {
+            "get": {
+                "summary": "linearDetail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "siTrafficKey",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/linearDetailGet200Response"
+                        },
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error Response",
+                        "schema": {
+                            "$ref": "#/definitions/linearDetailGet400Response"
+                        }
+                    }
+                },
+                "x-amazon-apigateway-integration": {
+                    "passthroughBehavior": "when_no_match",
+                    "httpMethod": "get",
+                    "type": "http_proxy",
+                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/linearDetail",
+                    "timeoutInMillis": 29000,
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    },
+                    "requestParameters": {
+                        "integration.request.querystring.siTrafficKey": "method.request.querystring.siTrafficKey"
+                    },
+                    "cacheKeyParameters": []
+                }
+            },
+            "options": {
+                "summary": "linearDetail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "siTrafficKey",
+                        "in": "query",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "deprecated": false,
+                "responses": {
+                    "200": {
+                        "description": "Default response for CORS method",
+                        "headers": {
+                            "Access-Control-Allow-Headers": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Methods": {
+                                "type": "string"
+                            },
+                            "Access-Control-Allow-Origin": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "x-amazon-apigateway-integration": {
+                    "passthroughBehavior": "when_no_match",
+                    "httpMethod": "get",
+                    "type": "http_proxy",
+                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/linearDetail",
+                    "timeoutInMillis": 29000,
+                    "responses": {
+                        "default": {
+                            "statusCode": "200",
+                            "responseParameters": {
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key'",
+                                "method.response.header.Access-Control-Allow-Methods": "'*'",
+                                "method.response.header.Access-Control-Allow-Origin": "'*'"
+                            }
+                        }
+                    },
+                    "requestParameters": {
+                        "integration.request.querystring.siTrafficKey": "method.request.querystring.siTrafficKey"
+                    },
+                    "cacheKeyParameters": []
+                }
+            }
+        }
+    },
+    "definitions": {
+        "detailPostBody": {
+            "type": "object",
+            "required": [
+                "fname"
+            ],
+            "properties": {
+                "fname": {
+                    "type": "string"
+                }
+            }
+        },
+        "detailPost200Response": {
+            "type": "object",
+            "required": [
+                "responseMessage"
+            ],
+            "properties": {
+                "responseCode": {
+                    "type": "number",
+                    "format": "float",
+                    "enum": [
+                        200
+                    ]
+                },
+                "responseMessage": {
+                    "type": "string"
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {}
+                }
+            }
+        },
+        "detailPost400Response": {
+            "type": "object",
+            "required": [
+                "responseMessage"
+            ],
+            "properties": {
+                "responseCode": {
+                    "type": "number",
+                    "format": "float",
+                    "enum": [
+                        400
+                    ]
+                },
+                "responseMessage": {
+                    "type": "string"
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "errors": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "errorCode",
+                                    "errorTitle",
+                                    "errorDescription"
+                                ],
+                                "properties": {
+                                    "errorCode": {
+                                        "type": "string"
+                                    },
+                                    "errorTitle": {
+                                        "type": "string"
+                                    },
+                                    "errorDescription": {
+                                        "type": "string"
+                                    },
+                                    "errorDebugDescription": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "linearDetailGet200Response": {
+            "type": "object",
+            "required": [
+                "responseMessage"
+            ],
+            "properties": {
+                "responseCode": {
+                    "type": "number",
+                    "format": "float",
+                    "enum": [
+                        200
+                    ]
+                },
+                "responseMessage": {
+                    "type": "string"
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {}
+                }
+            }
+        },
+        "linearDetailGet400Response": {
+            "type": "object",
+            "required": [
+                "responseMessage"
+            ],
+            "properties": {
+                "responseCode": {
+                    "type": "number",
+                    "format": "float",
+                    "enum": [
+                        400
+                    ]
+                },
+                "responseMessage": {
+                    "type": "string"
+                },
+                "response": {
+                    "type": "object",
+                    "properties": {
+                        "errors": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "errorCode",
+                                    "errorTitle",
+                                    "errorDescription"
+                                ],
+                                "properties": {
+                                    "errorCode": {
+                                        "type": "string"
+                                    },
+                                    "errorTitle": {
+                                        "type": "string"
+                                    },
+                                    "errorDescription": {
+                                        "type": "string"
+                                    },
+                                    "errorDebugDescription": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "x-amazon-apigateway-gateway-responses": {
+        "DEFAULT_4XX": {
+            "responseParameters": {
+                "gatewayresponse.header.Access-Control-Allow-Origin": "'*'"
+            },
+            "responseTemplates": {
+                "application/json": "{\"message\":$context.error.messageString}"
+            }
+        },
+        "DEFAULT_5XX": {
+            "responseParameters": {
+                "gatewayresponse.header.Access-Control-Allow-Origin": "'*'"
+            },
+            "responseTemplates": {
+                "application/json": "{\"message\":$context.error.messageString}"
+            }
+        }
+    }
+}
