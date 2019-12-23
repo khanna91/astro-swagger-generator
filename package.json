@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Astro API documentation tool using joi schema",
   "main": "src/index.js",
-  "author": "Rahul Khanna",
+  "author": "Rahul Khanna (khanna.mailme@gmail.com)",
   "license": "MIT",
   "keywords": [
     "swagger",
@@ -28,6 +28,10 @@
   "scripts": {
     "lint": "eslint ./src",
     "test": "astro-swagger-generator -v ./testdata/*.validator.js -h ./swagger/header.json -o ./swagger/swagger.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanna91/astro-swagger-generator.git"
   },
   "bin": {
     "swagger-generator": "./src/index.js"
