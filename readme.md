@@ -7,20 +7,20 @@ Define the header.json file that will be used as the header information in the s
 The basePath will be join together with the path in validator class, in the example all url will be /users/*
 ```
 {
-    "swagger": "2.0",
-    "info": {
-        "description": "Test account",
-        "version": "1.0.0",
-        "title": "Test Service",
-        "contact": {
-            "email": "rahul_khanna@astro.com.my"
-        }
-    },
-    "basePath": "/users",
-    "schemes": [
-        "http",
-        "https"
-    ]
+  "swagger": "2.0",
+  "info": {
+      "description": "Test account",
+      "version": "1.0.0",
+      "title": "Test Service",
+      "contact": {
+          "email": "rahul_khanna@astro.com.my"
+      }
+  },
+  "basePath": "/users",
+  "schemes": [
+      "http",
+      "https"
+  ]
 }
 ```
 
