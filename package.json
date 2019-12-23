@@ -27,13 +27,13 @@
   },
   "scripts": {
     "lint": "eslint ./src",
-    "test": "astro-swagger-generator -v ./testdata/*.validator.js -h ./swagger/header.json -o ./swagger/swagger.json"
+    "test": "astro-swagger-generator -v ./testdata -h ./swagger/header.json -o ./swagger/swagger.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khanna91/astro-swagger-generator.git"
   },
   "bin": {
-    "swagger-generator": "./src/index.js"
+    "astro-swagger-generator": "./src/index.js"
   }
 }

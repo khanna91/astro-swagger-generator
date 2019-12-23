@@ -8,6 +8,7 @@
             "email": "rahul_khanna@astro.com.my"
         }
     },
+    "basePath": "/",
     "schemes": [
         "http",
         "https"
@@ -86,7 +87,7 @@
                     "passthroughBehavior": "when_no_match",
                     "httpMethod": "post",
                     "type": "http_proxy",
-                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/detail/{detailId}",
+                    "uri": "http://${stageVariables.url}/v1/detail/{detailId}",
                     "timeoutInMillis": 29000,
                     "responses": {
                         "default": {
@@ -173,7 +174,7 @@
                     "passthroughBehavior": "when_no_match",
                     "httpMethod": "post",
                     "type": "http_proxy",
-                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/detail/{detailId}",
+                    "uri": "http://${stageVariables.url}/v1/detail/{detailId}",
                     "timeoutInMillis": 29000,
                     "responses": {
                         "default": {
@@ -245,7 +246,7 @@
                     "passthroughBehavior": "when_no_match",
                     "httpMethod": "get",
                     "type": "http_proxy",
-                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/linearDetail",
+                    "uri": "http://${stageVariables.url}/v1/linearDetail",
                     "timeoutInMillis": 29000,
                     "responses": {
                         "default": {
@@ -300,7 +301,7 @@
                     "passthroughBehavior": "when_no_match",
                     "httpMethod": "get",
                     "type": "http_proxy",
-                    "uri": "https://api-feed-dev.eco.astro.com.my/v1/linearDetail",
+                    "uri": "http://${stageVariables.url}/v1/linearDetail",
                     "timeoutInMillis": 29000,
                     "responses": {
                         "default": {

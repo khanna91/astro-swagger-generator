@@ -19,8 +19,7 @@ const _ = require('lodash');
 const j2s = require('joi-to-swagger');
 
 const baseUrl = argv.baseUrl ? argv.baseUrl : 'http://${stageVariables.url}'; // eslint-disable-line
-const relativeValidatorPath = argv.validator;
-const validatorFile = path.resolve(relativeValidatorPath);
+const validatorFile = argv.validator;
 const relativeHeaderPath = argv.header;
 const relativeOutputFile = argv.output;
 
